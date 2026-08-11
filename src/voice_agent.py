@@ -4,14 +4,20 @@ import time
 import uuid
 
 import edge_tts
-import pygame
+
+VOICE_AVAILABLE = True
+
+try:
+    import pygame
+    pygame.mixer.init()
+
+except Exception:
+    VOICE_AVAILABLE = False
 
 
 class VoiceAgent:
 
     def __init__(self):
-
-        pygame.mixer.init()
 
         self.last_message = ""
 
@@ -21,10 +27,10 @@ class VoiceAgent:
 
     def speak(self, message):
 
-        current_time = time.time()
-
         if not message:
             return
+
+        current_time = time.time()
 
         if (
             message == self.last_message
@@ -33,21 +39,18 @@ class VoiceAgent:
             return
 
         self.last_message = message
-
         self.last_spoken_time = current_time
 
-        asyncio.run(self._generate_and_play(message))
+        if VOICE_AVAILABLE:
+            asyncio.run(self._generate_and_play(message))
 
     async def _generate_and_play(self, message):
 
         filename = f"voice_{uuid.uuid4().hex}.mp3"
 
         communicate = edge_tts.Communicate(
-
             text=message,
-
             voice="en-US-GuyNeural"
-
         )
 
         await communicate.save(filename)
