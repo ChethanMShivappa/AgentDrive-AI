@@ -67,7 +67,7 @@ temp_video.mp4
 # Keep demo video only if needed
 # ==========================================
 
-videos/*.mp4
+#videos/*.mp4
 
 # Uncomment the line below if you want to keep
 # your demo video in GitHub.
