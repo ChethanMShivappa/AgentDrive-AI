@@ -5,13 +5,6 @@
 <img src="assets/dashboard.png" width="100%">
 
 </p>
-## 🚀 Live Demo
-
-🌐 **Try AgentDrive AI here:**
-
-**https://chethan-agentdrive-ai.streamlit.app/**
-
-> Upload a driving video to experience real-time object detection, motion analysis, AI-powered driving advice, and intelligent risk assessment.
 
 <p align="center">
 
@@ -24,6 +17,13 @@
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
 </p>
+
+## 🚀 Live Demo
+
+👉 https://chethan-agentdrive-ai.streamlit.app/
+
+> Experience real-time object detection, multi-object tracking, motion analysis, AI-powered driving advice, and intelligent risk assessment by uploading your own driving video.
+
 
 ---
 
